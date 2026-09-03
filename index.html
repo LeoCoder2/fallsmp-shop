@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fall SMP Shop</title>
+    <title>FallSMP - Official Webstore</title>
 
-    <!-- Favicon Links (Supports PNG, ICO, and Apple Touch Devices) -->
+    <!-- Favicon Links -->
     <link rel="icon" type="image/png" href="logo.png?v=3">
     <link rel="shortcut icon" type="image/x-icon" href="logo.ico?v=3">
     <link rel="apple-touch-icon" href="logo.png?v=3">
@@ -224,48 +224,53 @@
         <h2 class="section-title">Server Ranks</h2>
 
         <div class="grid">
+            <!-- EMBER RANK -->
             <div class="card">
                 <h3 class="rank-title" style="color: #FF5500;">[EMBER] Rank</h3>
                 <div class="price">$4.99</div>
                 <ul class="features">
                     <li>Ember Chat Tag</li>
-                    <li>3x Homes</li>
+                    <li>3x Home Teleports</li>
                 </ul>
-                <button class="btn" onclick="openModal('EMBER Rank', '$4.99')">Purchase</button>
+                <button class="btn" onclick="openModal('EMBER Rank', '$4.99', 'https://fallsmp.craftingstore.net/package/1589472')">Purchase</button>
             </div>
 
+            <!-- HARVEST RANK -->
             <div class="card">
                 <h3 class="rank-title" style="color: #FFAA00;">[HARVEST] Rank</h3>
                 <div class="price">$9.99</div>
                 <ul class="features">
                     <li>Harvest Chat Tag</li>
-                    <li>4x Homes</li>
+                    <li>4x Home Teleports</li>
                     <li>Access to /hat and /nick</li>
                     <li>All EMBER Perks</li>
                 </ul>
-                <button class="btn" onclick="openModal('Harvest Rank', '$9.99')">Purchase</button>
+                <button class="btn" onclick="openModal('Harvest Rank', '$9.99', 'https://fallsmp.craftingstore.net/package/1589475')">Purchase</button>
             </div>
 
+            <!-- AUTUMN RANK -->
             <div class="card">
                 <h3 class="rank-title" style="color: #AA0000;">[AUTUMN] Rank</h3>
                 <div class="price">$19.99</div>
                 <ul class="features">
                     <li>Autumn Gold Tag</li>
                     <li>5x Homes</li>
+                    <li>Access to /workbench & /ec</li>
                     <li>All EMBER & HARVEST Perks</li>
                 </ul>
-                <button class="btn" onclick="openModal('Autumn Rank', '$19.99')">Purchase</button>
+                <button class="btn" onclick="openModal('Autumn Rank', '$19.99', 'https://fallsmp.craftingstore.net/package/1589481')">Purchase</button>
             </div>
         </div>
     </div>
 
+    <!-- PURCHASE MODAL -->
     <div class="modal" id="buyModal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal()">&times;</span>
             <h3 id="modalTitle">Purchase Item</h3>
             <p id="modalPrice" style="color: var(--accent-color); margin: 10px 0; font-size: 1.2rem; font-weight: bold;"></p>
             <p style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: 1.5rem;">To complete this purchase, head over to our official checkout page:</p>
-            <a id="storeLink" href="https://shop.fallsmp.my.to" target="_blank" style="text-decoration: none;">
+            <a id="storeLink" href="#" target="_blank" style="text-decoration: none;">
                 <button class="btn">Go to Checkout</button>
             </a>
         </div>
@@ -276,9 +281,10 @@
     </footer>
 
     <script>
-        function openModal(item, price) {
+        function openModal(item, price, checkoutUrl) {
             document.getElementById('modalTitle').innerText = "Buying " + item;
             document.getElementById('modalPrice').innerText = price;
+            document.getElementById('storeLink').href = checkoutUrl;
             document.getElementById('buyModal').style.display = 'flex';
         }
 
