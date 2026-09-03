@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FallSMP - Official Webstore</title>
+    <style>
+        :root {
+            --bg-color: #0f1117;
+            --card-bg: #1a1d26;
+            --accent-color: #ff7b00;
+            --accent-hover: #e06d00;
+            --text-color: #ffffff;
+            --text-dim: #a0a5b5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Navbar */
+        header {
+            background-color: #14161f;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-container img {
+            height: 45px;
+            width: auto;
+        }
+
+        .logo-container h1 {
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        .logo-container span {
+            color: var(--accent-color);
+        }
+
+        /* Server IP Banner */
+        .ip-bar {
+            background: linear-gradient(90deg, #ff7b00, #ffae00);
+            color: #000;
+            text-align: center;
+            padding: 8px;
+            font-weight: bold;
+            font-size: 0.95rem;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            flex-grow: 1;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Ranks Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid #2a2e3d;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .rank-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .price {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .features {
+            list-style: none;
+            width: 100%;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .features li {
+            padding: 8px 0;
+            border-bottom: 1px solid #282c38;
+            color: var(--text-dim);
+            font-size: 0.95rem;
+            text-align: center;
+        }
+
+        .features li:last-child {
+            border-bottom: none;
+        }
+
+        .btn {
+            background-color: var(--accent-color);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.2s;
+            text-transform: uppercase;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #14161f;
+            text-align: center;
+            padding: 1.5rem;
+            color: var(--text-dim);
+            font-size: 0.85rem;
+            border-top: 1px solid #282c38;
+        }
+
+        /* Modal Popup */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        .modal-content {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            border: 1px solid var(--accent-color);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 1.5rem;
+            color: var(--text-dim);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="FallSMP Logo">
+            <h1>FALL<span>SMP</span> STORE</h1>
+        </div>
+    </header>
+
+    <div class="ip-bar">
+        Server IP: play.fallsmp.my.to | Official Store
+    </div>
+
+    <div class="container">
+        <h2 class="section-title">Server Ranks</h2>
+
+        <div class="grid">
+            <div class="card">
+                <h3 class="rank-title" style="color: #55ff55;">[VIP] Rank</h3>
+                <div class="price">$4.99</div>
+                <ul class="features">
+                    <li>VIP Chat Tag</li>
+                    <li>2x Home Teleports</li>
+                    <li>Access to /fly in Hub</li>
+                    <li>1x VIP Key Bundle</li>
+                </ul>
+                <button class="btn" onclick="openModal('VIP Rank', '$4.99')">Purchase</button>
+            </div>
+
+            <div class="card">
+                <h3 class="rank-title" style="color: #55ffff;">[MVP] Rank</h3>
+                <div class="price">$9.99</div>
+                <ul class="features">
+                    <li>MVP Chat Tag</li>
+                    <li>5x Home Teleports</li>
+                    <li>Access to /hat and /nick</li>
+                    <li>3x MVP Key Bundle</li>
+                    <li>All VIP Perks</li>
+                </ul>
+                <button class="btn" onclick="openModal('MVP Rank', '$9.99')">Purchase</button>
+            </div>
+
+            <div class="card">
+                <h3 class="rank-title" style="color: #ffaa00;">[LEGEND] Rank</h3>
+                <div class="price">$19.99</div>
+                <ul class="features">
+                    <li>Legend Gold Tag</li>
+                    <li>Unlimited Homes</li>
+                    <li>Access to /workbench & /ec</li>
+                    <li>5x Legend Key Bundle</li>
+                    <li>Priority Queue Access</li>
+                    <li>All VIP & MVP Perks</li>
+                </ul>
+                <button class="btn" onclick="openModal('Legend Rank', '$19.99')">Purchase</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="buyModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h3 id="modalTitle">Purchase Item</h3>
+            <p id="modalPrice" style="color: var(--accent-color); margin: 10px 0; font-size: 1.2rem; font-weight: bold;"></p>
+            <p style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: 1.5rem;">To complete this purchase, head over to our official checkout page:</p>
+            <a id="storeLink" href="https://shop.fallsmp.my.to" target="_blank" style="text-decoration: none;">
+                <button class="btn">Go to Checkout</button>
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 FallSMP. Not affiliated with Mojang or Microsoft.</p>
+    </footer>
+
+    <script>
+        function openModal(item, price) {
+            document.getElementById('modalTitle').innerText = "Buying " + item;
+            document.getElementById('modalPrice').innerText = price;
+            document.getElementById('buyModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('buyModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('buyModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
