@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fall SMP | Shop</title>
 
-    <!-- Favicon Links -->
     <link rel="icon" type="image/png" href="logo.png?v=3">
     <link rel="shortcut icon" type="image/x-icon" href="logo.ico?v=3">
     <link rel="apple-touch-icon" href="logo.png?v=3">
@@ -18,6 +17,8 @@
             --accent-hover: #e06d00;
             --text-color: #ffffff;
             --text-dim: #a0a5b5;
+            --gold-accent: #f5a623;
+            --orange-primary: #d96b27;
         }
 
         * {
@@ -63,6 +64,29 @@
 
         .logo-container span {
             color: var(--accent-color);
+        }
+
+        /* Main Website Back Button Style */
+        .back-btn {
+            background: linear-gradient(135deg, var(--gold-accent), var(--orange-primary));
+            color: #fff;
+            text-decoration: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            box-shadow: 0 0 15px rgba(245, 166, 35, 0.4);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 25px rgba(245, 166, 35, 0.6);
         }
 
         /* Server IP Banner */
@@ -205,6 +229,13 @@
             color: var(--text-dim);
             cursor: pointer;
         }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                gap: 12px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -214,6 +245,9 @@
             <img src="logo.png" alt="FallSMP Logo">
             <h1>FALL<span>SMP</span> STORE</h1>
         </div>
+        <a href="https://fallsmp.my.to" class="back-btn">
+            &#8592; Main Website
+        </a>
     </header>
 
     <div class="ip-bar">
@@ -224,7 +258,6 @@
         <h2 class="section-title">Server Ranks</h2>
 
         <div class="grid">
-            <!-- EMBER RANK -->
             <div class="card">
                 <h3 class="rank-title" style="color: #FF5500;">[EMBER] Rank</h3>
                 <div class="price">$4.99</div>
@@ -235,7 +268,6 @@
                 <button class="btn" onclick="openModal('EMBER Rank', '$4.99', 'https://fallsmp.craftingstore.net/package/1589472')">Purchase</button>
             </div>
 
-            <!-- HARVEST RANK -->
             <div class="card">
                 <h3 class="rank-title" style="color: #FFAA00;">[HARVEST] Rank</h3>
                 <div class="price">$9.99</div>
@@ -248,7 +280,6 @@
                 <button class="btn" onclick="openModal('Harvest Rank', '$9.99', 'https://fallsmp.craftingstore.net/package/1589475')">Purchase</button>
             </div>
 
-            <!-- AUTUMN RANK -->
             <div class="card">
                 <h3 class="rank-title" style="color: #AA0000;">[AUTUMN] Rank</h3>
                 <div class="price">$19.99</div>
@@ -262,7 +293,6 @@
         </div>
     </div>
 
-    <!-- PURCHASE MODAL -->
     <div class="modal" id="buyModal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal()">&times;</span>
